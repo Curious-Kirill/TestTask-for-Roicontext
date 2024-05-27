@@ -1,0 +1,14 @@
+
+
+p,h1,h2,h3,span,li{
+  transition:0.5s;
+}
+
+p:hover,h1:hover,h2:hover,span:hover,li:hover{
+  color:#0B68F0;
+}
+
+p:active,h1:active,h2:active,span:active{
+
+  color:blue;
+}

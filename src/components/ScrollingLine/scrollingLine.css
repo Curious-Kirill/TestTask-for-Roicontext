@@ -1,0 +1,98 @@
+*{
+  cursor:url('cursor.svg'), pointer;
+}
+
+.scroller {
+
+}
+
+.scroller__inner {
+  padding-block: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.scroller[data-animated="true"] {
+  overflow: hidden;
+ 
+}
+.scroller-top{
+
+}
+.italic-blue-line{
+  color:#0B68F0;
+  font-family: "Montserrat";
+  font-style: italic;
+  font-size:48px;
+  height:100%;
+  display:flex;
+  align-items:center;
+
+}
+
+.scroller[data-animated="true"] .scroller__inner {
+  width: max-content;
+  flex-wrap: nowrap;
+  animation: scroll var(--_animation-duration, 40s)
+    var(--_animation-direction, forwards) linear infinite;
+}
+
+.scroller[data-direction="right"] {
+  --_animation-direction: reverse;
+}
+
+.scroller[data-direction="left"] {
+  --_animation-direction: forwards;
+}
+
+
+.scroller[data-speed="fast"] {
+
+  --_animation-duration: 30s;
+}
+
+.scroller[data-speed="slow"] {
+  --_animation-duration: 60s;
+}
+
+@keyframes scroll {
+  to {
+    transform: translate(calc(-50% - 0.5rem));
+  }
+}
+
+/* general styles */
+
+:root {
+  --elements: 1;
+  --clr-neutral-100: hsl(0, 0%, 100%);
+  --clr-primary-100: hsl(205, 15%, 58%);
+  --clr-primary-400: hsl(215, 25%, 27%);
+  --clr-primary-800: #121213;
+  --clr-primary-900: hsl(218, 33%, 9%);
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  
+  background-color: var(--clr-primary-800);
+}
+
+.tag-list {
+  margin: 0;
+  padding-inline: 0;
+  list-style: none;
+}
+
+.tag-list li {
+  zoom:0.6;
+}
+
+/* for testing purposed to ensure the animation lined up correctly */
+.test {
+  background: red !important;
+}
